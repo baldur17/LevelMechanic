@@ -38,6 +38,8 @@ public class PlayerController : KinematicObject
     private float defaultGravityModifier;
 
     private SpriteRenderer spriteRenderer;
+    public Sprite spriteNotFlipped;
+    public Sprite spriteFlipped;
 
     void Awake()
     {
@@ -47,6 +49,7 @@ public class PlayerController : KinematicObject
 
         startPosition = transform.position;
         startOrientation = spriteRenderer.flipX;
+        
 
         defaultGravityModifier = gravityModifier;
     }
@@ -162,11 +165,13 @@ public class PlayerController : KinematicObject
         // Assume the sprite is facing right, flip it if moving left
         if (move.x > 0.01f)
         {
+            //Non flip x
             spriteRenderer.flipX = false;
         }
         else if (move.x < -0.01f)
         {
-            spriteRenderer.flipX = true;
+            //Flip x
+            //spriteRenderer.flipX = true;
         }
 
         spriteRenderer.color = canDash ? canDashColor : cantDashColor;
