@@ -28,7 +28,6 @@ public class PlayerController : KinematicObject
     public AudioClip dashSound;
 
     private Vector2 startPosition;
-    private bool startOrientation;
 
     private float lastJumpTime;
     private float lastGroundedTime;
@@ -40,7 +39,7 @@ public class PlayerController : KinematicObject
     private SpriteRenderer spriteRenderer;
     public Sprite spriteNotFlipped;
     public Sprite spriteFlipped;
-
+    public Light spotLight;
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -48,7 +47,6 @@ public class PlayerController : KinematicObject
         lastJumpTime = -jumpBufferTime * 2;
 
         startPosition = transform.position;
-        startOrientation = spriteRenderer.flipX;
         
 
         defaultGravityModifier = gravityModifier;
@@ -165,22 +163,21 @@ public class PlayerController : KinematicObject
         // Assume the sprite is facing right, flip it if moving left
         if (move.x > 0.01f)
         {
-            //Non flip x
-            spriteRenderer.flipX = false;
+            spriteRenderer.sprite = spriteNotFlipped;
         }
         else if (move.x < -0.01f)
         {
-            //Flip x
-            //spriteRenderer.flipX = true;
+            spriteRenderer.sprite = spriteFlipped;
         }
 
         spriteRenderer.color = canDash ? canDashColor : cantDashColor;
+        spotLight.color = canDash ? canDashColor : cantDashColor;
     }
 
     public void ResetPlayer()
     {
         transform.position = startPosition;
-        spriteRenderer.flipX = startOrientation;
+        spriteRenderer.sprite = spriteNotFlipped;
 
         lastJumpTime = -jumpBufferTime * 2;
 

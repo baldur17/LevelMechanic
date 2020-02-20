@@ -67,6 +67,9 @@ MonoBehaviour:
   source: {fileID: 1025081731160142149}
   jumpSound: {fileID: 8300000, guid: 8b772f38bed9f394db4026482c2fb8e4, type: 3}
   dashSound: {fileID: 8300000, guid: 508c4d19d632cfd419d8e9a97ae00cac, type: 3}
+  spriteNotFlipped: {fileID: 21300000, guid: 62279a718c252dc4d879e45004ae1584, type: 3}
+  spriteFlipped: {fileID: 21300000, guid: ca6993ff6194a5f44afcedc6b1fde118, type: 3}
+  spotLight: {fileID: 6276699142854859742}
 --- !u!50 &3286331822413284091
 Rigidbody2D:
   serializedVersion: 4
@@ -296,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4132093697320903250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.026000023, y: -0.02699998, z: -2.13}
+  m_LocalPosition: {x: 0.026000023, y: 0.025, z: -2.089}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 900576931678858792}
@@ -524,7 +527,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 567
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -561,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8634295413697253103}
   m_LocalRotation: {x: -0.5083568, y: -0.5117025, z: -0.49150118, w: -0.48801708}
-  m_LocalPosition: {x: 0.238, y: 0.235, z: -0.202}
+  m_LocalPosition: {x: 0.348, y: 0.078, z: -0.207}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 900576931678858792}
@@ -616,7 +619,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 567
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
