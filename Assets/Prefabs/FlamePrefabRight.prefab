@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2039650610782799170
+--- !u!1 &101162685278931243
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4907113671880964313}
-  - component: {fileID: 6491463887317891606}
+  - component: {fileID: 8244094430533530592}
+  - component: {fileID: 2328499909179781476}
   m_Layer: 8
   m_Name: PointLight
   m_TagString: Untagged
@@ -17,27 +17,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4907113671880964313
+--- !u!4 &8244094430533530592
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039650610782799170}
+  m_GameObject: {fileID: 101162685278931243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.106, y: 0.01, z: -0.5}
+  m_LocalPosition: {x: 0.098, y: 0.004, z: -1.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 3832806039326849365}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &6491463887317891606
+--- !u!108 &2328499909179781476
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2039650610782799170}
+  m_GameObject: {fileID: 101162685278931243}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
@@ -121,10 +121,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832806039326849364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.1, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 4907113671880964313}
+  - {fileID: 8244094430533530592}
   m_Father: {fileID: 3832806040685548244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593bdfaff0b3fd749ab8bd4cf4cd4855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 1
+  left: 0
   sceneName: 
 --- !u!95 &9179920384937609123
 Animator:
@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3832806040685548244}
   m_Layer: 0
-  m_Name: FlamePrefab
+  m_Name: FlamePrefabRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3832806040685548247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.202, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3832806039326849365}

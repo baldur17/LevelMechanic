@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3286331822413284091}
   - component: {fileID: 6775851020127425952}
   - component: {fileID: 1025081731160142149}
-  - component: {fileID: 1038866588229706745}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player1
@@ -213,21 +212,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1038866588229706745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115527992445001991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08223a86a32e2ad44947a8a88e730508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointLight: {fileID: 167036167980042886}
-  flashLight: {fileID: 1328752574093138746}
-  spotLight: {fileID: 6276699142854859742}
 --- !u!1 &2990102393313687404
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900576931678858792}
   - component: {fileID: 5044229791454585722}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: LightAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +335,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
@@ -524,7 +508,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 567
@@ -616,7 +600,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 567
