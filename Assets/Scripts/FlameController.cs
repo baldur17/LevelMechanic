@@ -34,6 +34,14 @@ public class FlameController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //SceneManager.LoadScene(2);
+        if (other.CompareTag("Player1"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if (other.CompareTag("Bounderies"))
+        {
+            Destroy(gameObject.transform.parent.gameObject);
+        }
+            
     }
 }

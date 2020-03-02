@@ -36346,7 +36346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1581125641}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.57, y: 9.22, z: 0}
+  m_LocalPosition: {x: 9.59, y: 9.08, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1943595013}
@@ -37559,7 +37559,7 @@ GameObject:
   - component: {fileID: 4765671665274536130}
   m_Layer: 0
   m_Name: TilemapBounderies
-  m_TagString: Untagged
+  m_TagString: Bounderies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
