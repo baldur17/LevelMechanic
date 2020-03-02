@@ -58,8 +58,8 @@ MonoBehaviour:
   jumpDeceleration: 0.3
   coyoteTime: 0.1
   jumpBufferTime: 0.1
-  dashSpeed: 40
-  dashTime: 0.04
+  dashSpeed: 20
+  dashTime: 0.06
   dashCooldown: 0.2
   canDashColor: {r: 0.20220721, g: 0.6037736, b: 0.25083956, a: 1}
   cantDashColor: {r: 1, g: 1, b: 1, a: 1}
