@@ -53,21 +53,19 @@ MonoBehaviour:
   velocity: {x: 0, y: 0}
   isGrounded: 0
   isFrozen: 0
-  maxSpeed: 7
-  jumpSpeed: 16
+  maxSpeed: 5
+  jumpSpeed: 13
   jumpDeceleration: 0.3
   coyoteTime: 0.1
   jumpBufferTime: 0.1
-  dashSpeed: 20
-  dashTime: 0.06
-  dashCooldown: 0.2
-  canDashColor: {r: 0.20220721, g: 0.6037736, b: 0.25083956, a: 1}
+  dashSpeed: 8
+  dashTime: 0.2
+  dashCooldown: 0.4
+  canDashColor: {r: 1, g: 1, b: 1, a: 1}
   cantDashColor: {r: 1, g: 1, b: 1, a: 1}
   source: {fileID: 1025081731160142149}
   jumpSound: {fileID: 8300000, guid: 8b772f38bed9f394db4026482c2fb8e4, type: 3}
   dashSound: {fileID: 8300000, guid: 508c4d19d632cfd419d8e9a97ae00cac, type: 3}
-  spriteNotFlipped: {fileID: 21300000, guid: 62279a718c252dc4d879e45004ae1584, type: 3}
-  spriteFlipped: {fileID: 21300000, guid: ca6993ff6194a5f44afcedc6b1fde118, type: 3}
   spotLight: {fileID: 6276699142854859742}
 --- !u!50 &3286331822413284091
 Rigidbody2D:
@@ -103,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.6003473, y: 0.44583282}
+  m_Offset: {x: -0.6688261, y: 0.46510553}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -114,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32734203, y: 0.97215956}
+  m_Size: {x: 0.19374657, y: 0.55618286}
   m_EdgeRadius: 0
 --- !u!82 &1025081731160142149
 AudioSource:
@@ -474,7 +472,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.627451, g: 0.89411765, b: 1, a: 1}
-  m_Intensity: 0.32
+  m_Intensity: 0.64
   m_Range: 35
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

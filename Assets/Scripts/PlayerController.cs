@@ -1,8 +1,11 @@
-﻿using AGDDPlatformer;
+﻿using System;
+using AGDDPlatformer;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : KinematicObject
 {
+
     [Header("Movement")]
     public float maxSpeed = 7;
     public float jumpSpeed = 7;
@@ -18,6 +21,7 @@ public class PlayerController : KinematicObject
     public Color cantDashColor;
     private float lastDashTime;
     private Vector2 dashDirection;
+    private Vector2 mouseDashDirection;
     private bool isDashing;
     private bool canDash;
     private bool wantsToDash;
@@ -35,10 +39,11 @@ public class PlayerController : KinematicObject
     private bool jumpReleased;
     private Vector2 move;
     private float defaultGravityModifier;
-
+    private bool _isDead = false;
+    private Animator _animator;
+    private GameObject _lightAnchor;
+    
     private SpriteRenderer spriteRenderer;
-    public Sprite spriteNotFlipped;
-    public Sprite spriteFlipped;
     public Light spotLight;
     void Awake()
     {
@@ -47,7 +52,9 @@ public class PlayerController : KinematicObject
         lastJumpTime = -jumpBufferTime * 2;
 
         startPosition = transform.position;
-        
+
+        _animator = gameObject.GetComponentInChildren<Animator>();
+        _lightAnchor = GameObject.Find("LightAnchor");
 
         defaultGravityModifier = gravityModifier;
     }
@@ -55,6 +62,11 @@ public class PlayerController : KinematicObject
     void Update()
     {
         isFrozen = GameManager.instance.timeStopped;
+        //Do no actions if player is dead
+        if (_isDead)
+        {
+            return;
+        }
 
         /* --- Read Input --- */
 
@@ -87,7 +99,9 @@ public class PlayerController : KinematicObject
             desiredDashDirection = spriteRenderer.flipX ? -Vector2.right : Vector2.right;
         }
         desiredDashDirection = desiredDashDirection.normalized;
-        if (Input.GetButtonDown("Dash"))
+        //var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        //mouseDashDirection = new Vector2(dir.x, dir.y).normalized;
+        if (Input.GetButtonDown("Dash") || Input.GetMouseButtonDown(1))
         {
             wantsToDash = true;
         }
@@ -108,6 +122,7 @@ public class PlayerController : KinematicObject
 
         if (isDashing)
         {
+            //Is dashing, play dash animation
             velocity = dashDirection * dashSpeed;
             if (Time.time - lastDashTime >= dashTime)
             {
@@ -163,22 +178,53 @@ public class PlayerController : KinematicObject
         // Assume the sprite is facing right, flip it if moving left
         if (move.x > 0.01f)
         {
-            spriteRenderer.sprite = spriteNotFlipped;
+            spriteRenderer.flipX = false;
         }
         else if (move.x < -0.01f)
         {
-            spriteRenderer.sprite = spriteFlipped;
+            spriteRenderer.flipX = true;
         }
 
         spriteRenderer.color = canDash ? canDashColor : cantDashColor;
         spotLight.color = canDash ? canDashColor : cantDashColor;
+        
+        setAnimation();
+    }
+
+    private void setAnimation()
+    {
+
+        if (isDashing)
+        {
+            //Play dash animation
+            _animator.Play("PlayerDash");
+        }
+        else if ((move.x < 0.1 && move.x > -0.1) && (move.y < 0.1 && move.y > -0.1) && isGrounded)
+        {
+            //Play run animation
+            _animator.Play("PlayerIdle");
+        }
+        else if (!canJump)
+        {
+            //Play jump animation
+            _animator.Play("PlayerJump");
+        }
+        else
+        {
+            //Play idle animation
+            _animator.Play("PlayerRun");
+        }
+        
+        
     }
 
     public void ResetPlayer()
     {
         transform.position = startPosition;
-        spriteRenderer.sprite = spriteNotFlipped;
-
+        
+        //spriteRenderer.sprite = spriteNotFlipped;
+        spriteRenderer.flipX = false;
+        
         lastJumpTime = -jumpBufferTime * 2;
 
         velocity = Vector2.zero;
@@ -187,5 +233,19 @@ public class PlayerController : KinematicObject
     public void ResetDash()
     {
         canDash = true;
+    }
+
+    public void setIsDead()
+    {
+        velocity.x = 0;
+        velocity.y = -Mathf.Abs(velocity.y);
+        Destroy(_lightAnchor);
+        _animator.Play("PlayerDead"); 
+        _isDead = true;
+    }
+
+    public bool getIsDashing()
+    {
+        return isDashing;
     }
 }

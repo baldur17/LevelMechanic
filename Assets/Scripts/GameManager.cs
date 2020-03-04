@@ -127,5 +127,20 @@ namespace AGDDPlatformer
                 player.ResetPlayer();
             }
         }
+
+        public void PlayerDeath()
+        {
+            Invoke(nameof(ResetScene), 2f);
+            foreach (PlayerController player in players)
+            {
+                player.setIsDead();
+            }
+        }
+        
+        private void ResetScene()
+        {
+            Debug.Log("I should be resetting now");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

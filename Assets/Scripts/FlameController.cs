@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using AGDDPlatformer;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,12 +37,11 @@ public class FlameController : MonoBehaviour
     {
         if (other.CompareTag("Player1"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            GameManager.instance.PlayerDeath();
         }
         else if (other.CompareTag("Bounderies"))
         {
             Destroy(gameObject.transform.parent.gameObject);
         }
-            
     }
 }
